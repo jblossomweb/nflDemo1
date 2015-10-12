@@ -1,0 +1,10 @@
+<ion-view view-title="Teams">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="team in teams | orderBy:'name'" href="#/app/teams/{{team.id}}">
+        <img src="{{team.logo.url}}" width="32" height="32" style="float:left;margin-right:20px;margin-top:-6px" /> 
+        <span style="float:left;" />{{team.name}}</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

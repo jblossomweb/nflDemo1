@@ -1,0 +1,10 @@
+<ion-view view-title="Roster">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="player in team.roster | orderBy:'lastName'"> 
+        <!-- <img src="{{player.images[0].url}}" width="32" height="32" style="float:left;margin-right:20px;margin-top:-6px" />  -->
+        <span style="float:left;" />{{player.name}}</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

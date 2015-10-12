@@ -1,0 +1,19 @@
+<ion-view view-title="{{team.mascot}}">
+  <ion-content>
+    <!-- <h1 class="center page-title">{{team.name}}</h1> -->
+    <div class="center page-title" style="background-color:{{team.colorCode}}">
+    	<img src="{{team.logo.url}}" />
+    </div>
+    <ion-list>
+      <ion-item href="#/app/teams/{{team.id}}/roster">
+        <span class="center">Roster</span>
+      </ion-item>
+      <ion-item href="#/app/teams/{{team.id}}/depth">
+        <span class="center">Depth Chart</span>
+      </ion-item>
+      <ion-item href="#/app/teams/{{team.id}}/injuries">
+        <span class="center">Injuries</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

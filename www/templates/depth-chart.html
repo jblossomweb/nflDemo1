@@ -1,0 +1,14 @@
+<ion-view view-title="{{ (formation.name !== 'default' ? formation.name : chart.type) | capitalize }}">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="position in formation.positions">
+        <span style="float:left;" />{{ position.name }}</span>
+        <!-- <ion-list>
+      		<ion-item ng-repeat="player in position.depth">
+      			<span style="float:left;" />{{player.name}}</span>
+      		</ion-item>
+      	</ion-list> -->
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

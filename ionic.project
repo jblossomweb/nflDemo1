@@ -1,0 +1,12 @@
+{
+  "name": "nflTeams",
+  "app_id": "8ee546a8",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
