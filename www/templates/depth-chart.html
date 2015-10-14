@@ -1,14 +1,31 @@
 <ion-view view-title="{{ (formation.name !== 'default' ? formation.name : chart.type) | capitalize }}">
-  <ion-content>
-    <ion-list>
+  <ion-content class="turf">
+
+    <!-- <img src="{{team.logo.url}}" /> -->
+    
+
+<!--     <ion-list>
       <ion-item ng-repeat="position in formation.positions">
         <span style="float:left;" />{{ position.name }}</span>
-        <!-- <ion-list>
+        <ion-list>
       		<ion-item ng-repeat="player in position.depth">
       			<span style="float:left;" />{{player.name}}</span>
       		</ion-item>
-      	</ion-list> -->
+      	</ion-list>
       </ion-item>
-    </ion-list>
+    </ion-list> -->
+
+<!--     <div>
+      {{chart.type}}
+    </div> -->
+
+    <hr />
+
+    <div class="field">
+      <div ng-repeat="position in formation.positions" class="position {{chart.type}} {{position.name}} {{formation.name == 'Base 3-4 D' ? 'threefour' : ''}}" style="background-color:{{team.colorCode}}">
+        <div class="name" ng-bind="position.name"></div>
+      </div>
+    </div>
+
   </ion-content>
 </ion-view>

@@ -5,3 +5,330 @@
 h1.page-title{
 	padding-top: 24px !important;
 }
+
+.turf {
+	background: url("../img/turf.jpg") repeat;
+	color:#fff;
+	height:100%;
+}
+
+.turf .field {
+	position:relative;
+	display:block;
+	width:100%;
+	height:100%;
+	min-height:300px;
+	margin:auto;
+}
+
+.turf .field .position {
+	position:absolute;
+	cursor:pointer;
+	/*border-radius: 50%;*/
+	width:48px;
+	height:48px;
+	left:50%;
+}
+
+.turf .field .position.offense {
+	border-radius: 50%;
+}
+
+.turf .field .position .name {
+	position:absolute;
+	width:100%;
+	text-align:center;
+	bottom:14px;
+	font-weight:bold;
+	font-size:14px;
+}
+
+.turf .field .position.offense.C,
+.turf .field .position.offense.QB,
+.turf .field .position.offense.FB,
+.turf .field .position.offense.RB {
+	margin-left:0px;
+}
+
+.turf .field .position.offense.C,
+.turf .field .position.offense.LG,
+.turf .field .position.offense.RG,
+.turf .field .position.offense.LT,
+.turf .field .position.offense.RT,
+.turf .field .position.offense.TE,
+.turf .field .position.offense.WR {
+	top:10px;
+}
+
+.turf .field .position.offense.QB {
+	top:80px;
+}
+
+.turf .field .position.offense.FB {
+	top:150px;
+}
+
+.turf .field .position.offense.RB {
+	top:210px;
+}
+
+.turf .field .position.offense.LG {
+	margin-left:-60px;
+}
+
+.turf .field .position.offense.RG {
+	margin-left:60px;
+}
+
+.turf .field .position.offense.LT {
+	margin-left:-120px;
+}
+
+.turf .field .position.offense.RT {
+	margin-left:120px;
+}
+
+.turf .field .position.offense.TE {
+	margin-left:180px;
+	top:20px;
+}
+
+.turf .field .position.offense.WR {
+	left:10px;
+	top:20px;
+}
+
+/* 4-3 defense */
+
+.turf .field .position.defense.LDT,
+.turf .field .position.defense.RDT,
+.turf .field .position.defense.LDE,
+.turf .field .position.defense.RDE, {
+	top:10px;
+}
+
+.turf .field .position.defense.SLB,
+.turf .field .position.defense.WLB,
+.turf .field .position.defense.MLB,
+.turf .field .position.defense.LILB,
+.turf .field .position.defense.RILB,
+.turf .field .position.defense.LOLB,
+.turf .field .position.defense.ROLB {
+	top:60px;
+}
+
+.turf .field .position.defense.SS,
+.turf .field .position.defense.FS {
+	top:140px;
+}
+
+.turf .field .position.defense.LDT {
+	margin-left:-40px;
+}
+
+.turf .field .position.defense.RDT {
+	margin-left:40px;
+}
+
+.turf .field .position.defense.LDE {
+	margin-left:-120px;
+}
+
+.turf .field .position.defense.RDE {
+	margin-left:120px;
+}
+
+.turf .field .position.defense.SLB {
+	margin-left:-90px;
+}
+
+.turf .field .position.defense.WLB {
+	margin-left:90px;
+}
+
+.turf .field .position.defense.SS {
+	margin-left:-180px;
+}
+
+.turf .field .position.defense.FS {
+	margin-left:180px;
+}
+
+.turf .field .position.defense.CB {
+	left:10px;
+	top:20px;
+}
+
+/* 3-4 defense */
+.turf .field .position.defense.threefour.LDE {
+	margin-left:-80px;
+}
+
+.turf .field .position.defense.threefour.RDE {
+	margin-left:80px;
+}
+
+.turf .field .position.defense.threefour.LILB {
+	margin-left:-40px;
+}
+
+.turf .field .position.defense.threefour.RILB {
+	margin-left:40px;
+}
+
+.turf .field .position.defense.threefour.LOLB {
+	margin-left:-120px;
+}
+
+.turf .field .position.defense.threefour.ROLB {
+	margin-left:120px;
+}
+
+/* special teams */
+
+.turf .field .position.special.teams {
+	/*left:20px;*/
+	left:17%;
+	position:relative;
+	display:inline-block;
+	margin-right:20px;
+}
+
+@media only screen and (max-width: 480px){
+	.turf .field .position {
+		left:44%;
+	}
+}
+
+
+@media only screen and (max-width: 420px){
+
+  .turf .field .position {
+	left:50%;
+  }
+  .turf .field .position {
+	width:32px;
+	height:32px;
+  }
+
+  .turf .field .position .name {
+	font-size:11px;
+	bottom:6px;
+  }
+
+  .turf .field .position.offense.QB {
+	top:50px;
+  }
+
+  .turf .field .position.offense.FB {
+	top:90px;
+  }
+
+  .turf .field .position.offense.RB {
+	top:130px;
+  }
+
+  .turf .field .position.offense.LG {
+	margin-left:-40px;
+  }
+
+  .turf .field .position.offense.RG {
+	margin-left:40px;
+  }
+
+  .turf .field .position.offense.LT {
+	margin-left:-80px;
+  }
+
+  .turf .field .position.offense.RT {
+	margin-left:80px;
+  }
+
+  .turf .field .position.offense.TE {
+	margin-left:120px;
+	top:20px;
+  }
+
+   /* 4-3/default defense */
+
+  .turf .field .position.defense.SLB,
+  .turf .field .position.defense.WLB,
+  .turf .field .position.defense.MLB,
+  .turf .field .position.defense.LILB,
+  .turf .field .position.defense.RILB,
+  .turf .field .position.defense.LOLB,
+  .turf .field .position.defense.ROLB  {
+	top:45px;
+  }
+
+  .turf .field .position.defense.SS,
+  .turf .field .position.defense.FS {
+	top:100px;
+  }
+
+  .turf .field .position.defense.LDT {
+	margin-left:-25px;
+  }
+
+  .turf .field .position.defense.RDT {
+	margin-left:25px;
+  }
+
+  .turf .field .position.defense.LDE {
+	margin-left:-80px;
+  }
+
+  .turf .field .position.defense.RDE {
+	margin-left:80px;
+  }
+
+  .turf .field .position.defense.SLB {
+	margin-left:-60px;
+  }
+
+  .turf .field .position.defense.WLB {
+	margin-left:60px;
+  }
+
+  .turf .field .position.defense.SS {
+	margin-left:-120px;
+  }
+
+  .turf .field .position.defense.FS {
+	margin-left:120px;
+  }
+
+  .turf .field .position.defense.CB {
+	left:10px;
+	top:20px;
+  }
+
+  /* 3-4 defense */
+  .turf .field .position.defense.threefour.LDE {
+	margin-left:-50px;
+  }
+
+  .turf .field .position.defense.threefour.RDE {
+	margin-left:50px;
+  }
+
+  .turf .field .position.defense.threefour.LILB {
+	margin-left:-25px;
+  }
+
+  .turf .field .position.defense.threefour.RILB {
+	margin-left:25px;
+  }
+
+  .turf .field .position.defense.threefour.LOLB {
+	margin-left:-75px;
+  }
+
+  .turf .field .position.defense.threefour.ROLB {
+	margin-left:75px;
+  }
+}
+
+
+
+

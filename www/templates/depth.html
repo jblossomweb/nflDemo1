@@ -1,40 +1,15 @@
 <ion-view view-title="Depth Chart">
-  <ion-content>
-    <!-- <ion-list>
+  <ion-content style="background-color:{{team.colorCode}}">
+    <ion-list>
       <ion-item ng-repeat="chart in team.depth | orderBy:orderByType" href="#/app/teams/{{team.id}}/depth/{{chart.id}}">
-        <span style="float:left;" />{{ chart.type | capitalize }}</span>
+        <span style="float:left;" />
+        	<!-- <i ng-if="chart.type == 'offense'" class="icon ion-android-radio-button-off" style="margin-right:4px"></i>
+        	<i ng-if="chart.type == 'defense'" class="icon ion-android-close" style="margin-right:4px"></i>
+        	<i ng-if="chart.type == 'special teams'" class="ion-android-star-outline" style="margin-right:4px"></i> -->
+        	{{ chart.type | capitalize }}
+        </span>
       </ion-item>
-    </ion-list> -->
-<!--     <ion-tabs class="tabs-positive tabs-icon-only">
-	  <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
-	    home
-	  </ion-tab>
-	  <ion-tab title="About" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
-	    about
-	  </ion-tab>
-	  <ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
-	    settings
-	  </ion-tab>
-	</ion-tabs> -->
+    </ion-list>
   </ion-content>
-  <ion-footer-bar align-title="left" class="">
-  <!-- <div class="buttons">
-    <button class="button">Left Button</button>
-  </div>
-  <h1 class="title">Title!</h1>
-  <div class="buttons" ng-click="doSomething()">
-    <button class="button">Right Button</button>
-  </div> -->
-  <ion-tabs class="" style="background:{{team.colorCode}} !important">
-	  <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
-	    home
-	  </ion-tab>
-	  <ion-tab title="About" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
-	    about
-	  </ion-tab>
-	  <ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
-	    settings
-	  </ion-tab>
-	</ion-tabs>
-</ion-footer-bar>
+  <!-- <ion-footer-bar ng-include="'templates/depth-tabs.html'"></ion-footer-bar> -->
 </ion-view>
