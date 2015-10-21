@@ -188,10 +188,34 @@ h1.page-title{
 
 .turf .field .position.special.teams {
 	/*left:20px;*/
-	left:17%;
+	/*left:17%;
 	position:relative;
 	display:inline-block;
-	margin-right:20px;
+	margin-right:20px;*/
+}
+
+.turf .field .position.special.teams.K,
+.turf .field .position.special.teams.PK,
+.turf .field .position.special.teams.P {
+    top:80px;
+}
+
+.turf .field .position.special.teams.KR {
+    margin-left:-120px;
+}
+.turf .field .position.special.teams.PR {
+    margin-left:120px;
+}
+
+.turf .field .position.special.teams.K,
+.turf .field .position.special.teams.PK,
+.turf .field .position.special.teams.H {
+    margin-left:-40px;
+}
+
+.turf .field .position.special.teams.P,
+.turf .field .position.special.teams.LS {
+    margin-left:40px;
 }
 
 @media only screen and (max-width: 480px){
