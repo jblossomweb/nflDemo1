@@ -93,6 +93,17 @@ angular.module('nflTeams', ['ionic', 'nflTeams.controllers'])
       }
     });
   }
+  teamFactory.getPlayer = function getPlayer(id) {
+    var player = {};
+    return $http.get(teamFactory.apiBase+'players/'+id).success(function(data){
+      player = data;
+      console.log('player data loaded for '+id);
+    }).error(function(error){
+      console.log(error);
+    }).then(function(){
+      return player;
+    });
+  }
   teamFactory.getDepth = function getDepth(id) {
     return teamFactory.get(id).then(function(team){
       if(team.depth && team.depth.length){
@@ -204,6 +215,21 @@ angular.module('nflTeams', ['ionic', 'nflTeams.controllers'])
     resolve: {
       team: ['$stateParams', 'teamFactory', function($stateParams, teamFactory) {
         return teamFactory.getRoster($stateParams.teamId)
+      }]
+    }
+  })
+
+  .state('app.player', {
+    url: '/players/:playerId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/player.html',
+        controller: 'PlayerCtrl'
+      }
+    },
+    resolve: {
+      player: ['$stateParams', 'teamFactory', function($stateParams, teamFactory) {
+        return teamFactory.getPlayer($stateParams.playerId)
       }]
     }
   })

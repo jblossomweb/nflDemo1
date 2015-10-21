@@ -43,8 +43,8 @@ angular.module('nflTeams.controllers', [])
 
 .controller('TeamsCtrl', ['$scope', '$ionicScrollDelegate', 'teamFactory', function($scope, $ionicScrollDelegate, teamFactory) {
   $scope.teams = teamFactory.teams;
-  var letterHasMatch = {};
   
+  var letterHasMatch = {};
   $scope.getTeams = function() {
       letterHasMatch = {};
       return $scope.teams.filter(function(item) {
@@ -60,11 +60,6 @@ angular.module('nflTeams.controllers', [])
           letterHasMatch[letter] = true;
         }
         return itemDoesMatch;
-      }).filter(function(item) {
-        if (item.isLetter && !letterHasMatch[item.letter]) {
-          return false;
-        }
-        return true;
       });
     };
 
@@ -79,16 +74,54 @@ angular.module('nflTeams.controllers', [])
   $scope.scrollBottom = function() {
     $ionicScrollDelegate.scrollBottom();
   };
-
 }])
 
 .controller('TeamCtrl', ['$scope', 'team', function($scope, team) {
   $scope.team = team;
 }])
 
-.controller('RosterCtrl', ['$scope', 'team', function($scope, team) {
+.controller('RosterCtrl', ['$scope', '$ionicScrollDelegate', 'team', function($scope, $ionicScrollDelegate, team) {
   $scope.team = team;
   $scope.roster = team ? team.roster || [] : [];
+
+  var letterHasMatch = {};
+  $scope.getPlayers = function() {
+      letterHasMatch = {};
+      return $scope.roster.filter(function(item) {
+        var itemDoesMatch = !$scope.search || item.isLetter ||
+          item.name.toLowerCase().indexOf($scope.search.toLowerCase()) > -1 ||
+          item.firstName.toLowerCase().indexOf($scope.search.toLowerCase()) > -1 ||
+          item.lastName.toLowerCase().indexOf($scope.search.toLowerCase()) > -1;
+        if (!item.isLetter && itemDoesMatch) {
+          var letter = item.name.charAt(0).toUpperCase();
+          if (item.name.charCodeAt(0) < 65) {
+            letter = "#";
+          }
+          letterHasMatch[letter] = true;
+        }
+        return itemDoesMatch;
+      });
+    };
+
+  $scope.clearSearch = function() {
+    $scope.search = '';
+  };
+
+  $scope.scrollTop = function() {
+    $ionicScrollDelegate.scrollTop();
+  };
+
+  $scope.scrollBottom = function() {
+    $ionicScrollDelegate.scrollBottom();
+  };
+}])
+
+.controller('PlayerCtrl', ['$scope', 'player', 'teamFactory', function($scope, player, teamFactory) {
+  $scope.player = player;
+  $scope.team = player.team;
+  teamFactory.get(player.team.id).then(function(team){
+    $scope.team = team;
+  }); // promise
 }])
 
 .controller('DepthCtrl', ['$scope', 'team', function($scope, team) {

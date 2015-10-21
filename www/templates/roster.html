@@ -1,7 +1,20 @@
 <ion-view view-title="Roster">
+  <ion-header-bar class="bar-light bar-subheader search-bar">
+    <input type="text" placeholder="Search" 
+      ng-model="search"
+      ng-focus="searchFocused = true"
+      ng-blur="searchFocused = false"
+      ng-change="scrollTop()"
+      style="width:100%"
+    >
+    <button ng-if="search.length"
+      class="button button-icon ion-android-close input-button"
+      ng-click="clearSearch()">
+    </button>
+  </ion-header-bar>
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="player in team.roster | orderBy:'lastName'"> 
+      <ion-item ng-repeat="player in getPlayers() | orderBy:'lastName'" href="#/app/players/{{player.id}}"> 
         <!-- <img src="{{player.images[0].url}}" width="32" height="32" style="float:left;margin-right:20px;margin-top:-6px" />  -->
         <span style="float:left;" />{{player.name}}</span>
       </ion-item>

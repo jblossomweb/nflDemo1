@@ -5,7 +5,7 @@
 
     <ion-list class="position-depth-list" ng-repeat="position in formation.positions" ng-show="selectedPosition == position.name">
       <ion-item ng-bind="position.name" class="position-header" style="background-color:{{team.colorCode}}"></ion-item>
-      <ion-item ng-repeat="player in position.depth">
+      <ion-item ng-repeat="player in position.depth" href="#/app/players/{{player.id}}">
         <span style="float:left;" />{{player.name}}</span>
       </ion-item>
     </ion-list>
