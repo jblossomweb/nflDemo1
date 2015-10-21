@@ -30,6 +30,12 @@ h1.page-title{
 	left:50%;
 }
 
+.turf .field .position.selected{
+    color:#000 !important;
+    background-color:#fff !important;
+    box-shadow: 2px 2px 1px #444;
+}
+
 .turf .field .position.offense {
 	border-radius: 50%;
 }
@@ -216,6 +222,11 @@ h1.page-title{
 .turf .field .position.special.teams.P,
 .turf .field .position.special.teams.LS {
     margin-left:40px;
+}
+
+.position-header {
+    font-weight:bold;
+    color:#fff;
 }
 
 @media only screen and (max-width: 480px){

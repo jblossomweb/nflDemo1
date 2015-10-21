@@ -22,10 +22,17 @@
     <hr />
 
     <div class="field">
-      <div ng-repeat="position in formation.positions" class="position {{chart.type}} {{position.name}} {{formation.name == 'Base 3-4 D' ? 'threefour' : ''}}" style="background-color:{{team.colorCode}}">
+      <div ng-repeat="position in formation.positions" class="position {{chart.type}} {{position.name}} {{formation.name == 'Base 3-4 D' ? 'threefour' : ''}} {{ selectedPosition == position.name ? 'selected' : ''}}" style="background-color:{{team.colorCode}}" ng-click="selectPosition(position.name)">
         <div class="name" ng-bind="position.name"></div>
       </div>
     </div>
+
+    <ion-list ng-repeat="position in formation.positions" ng-show="selectedPosition == position.name">
+      <ion-item ng-bind="position.name" class="position-header" style="background-color:{{team.colorCode}}"></ion-item>
+      <ion-item ng-repeat="player in position.depth">
+        <span style="float:left;" />{{player.name}}</span>
+      </ion-item>
+    </ion-list>
 
   </ion-content>
 </ion-view>

@@ -72,5 +72,8 @@ angular.module('nflTeams.controllers', [])
   $scope.depth = team ? team.depth || [] : [];
   $scope.chart = chart || {};
   $scope.formation = $filter('getByField')(chart.formations || [], 'isDefault', true);
-  console.log($scope.formation);
+  $scope.selectedPosition = null;
+  $scope.selectPosition = function(position) {
+    $scope.selectedPosition = position;
+  };
 }]);
