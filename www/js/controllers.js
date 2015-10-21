@@ -41,8 +41,45 @@ angular.module('nflTeams.controllers', [])
   };
 })
 
-.controller('TeamsCtrl', ['$scope', 'teamFactory', function($scope, teamFactory) {
+.controller('TeamsCtrl', ['$scope', '$ionicScrollDelegate', 'teamFactory', function($scope, $ionicScrollDelegate, teamFactory) {
   $scope.teams = teamFactory.teams;
+  var letterHasMatch = {};
+  
+  $scope.getTeams = function() {
+      letterHasMatch = {};
+      return $scope.teams.filter(function(item) {
+        var itemDoesMatch = !$scope.search || item.isLetter ||
+          item.name.toLowerCase().indexOf($scope.search.toLowerCase()) > -1 ||
+          item.nameShort.toLowerCase().indexOf($scope.search.toLowerCase()) > -1 ||
+          item.mascot.toLowerCase().indexOf($scope.search.toLowerCase()) > -1;
+        if (!item.isLetter && itemDoesMatch) {
+          var letter = item.name.charAt(0).toUpperCase();
+          if (item.name.charCodeAt(0) < 65) {
+            letter = "#";
+          }
+          letterHasMatch[letter] = true;
+        }
+        return itemDoesMatch;
+      }).filter(function(item) {
+        if (item.isLetter && !letterHasMatch[item.letter]) {
+          return false;
+        }
+        return true;
+      });
+    };
+
+  $scope.clearSearch = function() {
+    $scope.search = '';
+  };
+
+  $scope.scrollTop = function() {
+    $ionicScrollDelegate.scrollTop();
+  };
+
+  $scope.scrollBottom = function() {
+    $ionicScrollDelegate.scrollBottom();
+  };
+
 }])
 
 .controller('TeamCtrl', ['$scope', 'team', function($scope, team) {

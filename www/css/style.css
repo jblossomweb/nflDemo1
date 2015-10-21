@@ -17,7 +17,7 @@ h1.page-title{
 	display:block;
 	width:100%;
 	height:100%;
-	min-height:300px;
+	min-height:280px;
 	margin:auto;
 }
 
@@ -192,14 +192,6 @@ h1.page-title{
 
 /* special teams */
 
-.turf .field .position.special.teams {
-	/*left:20px;*/
-	/*left:17%;
-	position:relative;
-	display:inline-block;
-	margin-right:20px;*/
-}
-
 .turf .field .position.special.teams.K,
 .turf .field .position.special.teams.PK,
 .turf .field .position.special.teams.P {
@@ -227,6 +219,13 @@ h1.page-title{
 .position-header {
     font-weight:bold;
     color:#fff;
+}
+
+.search-bar .button.button-icon.input-button {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  color: #bbb;
 }
 
 @media only screen and (max-width: 480px){

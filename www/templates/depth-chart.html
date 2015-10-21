@@ -2,22 +2,13 @@
   <ion-content class="turf">
 
     <!-- <img src="{{team.logo.url}}" /> -->
-    
 
-<!--     <ion-list>
-      <ion-item ng-repeat="position in formation.positions">
-        <span style="float:left;" />{{ position.name }}</span>
-        <ion-list>
-      		<ion-item ng-repeat="player in position.depth">
-      			<span style="float:left;" />{{player.name}}</span>
-      		</ion-item>
-      	</ion-list>
+    <ion-list class="position-depth-list" ng-repeat="position in formation.positions" ng-show="selectedPosition == position.name">
+      <ion-item ng-bind="position.name" class="position-header" style="background-color:{{team.colorCode}}"></ion-item>
+      <ion-item ng-repeat="player in position.depth">
+        <span style="float:left;" />{{player.name}}</span>
       </ion-item>
-    </ion-list> -->
-
-<!--     <div>
-      {{chart.type}}
-    </div> -->
+    </ion-list>
 
     <hr />
 
@@ -27,12 +18,7 @@
       </div>
     </div>
 
-    <ion-list ng-repeat="position in formation.positions" ng-show="selectedPosition == position.name">
-      <ion-item ng-bind="position.name" class="position-header" style="background-color:{{team.colorCode}}"></ion-item>
-      <ion-item ng-repeat="player in position.depth">
-        <span style="float:left;" />{{player.name}}</span>
-      </ion-item>
-    </ion-list>
+    
 
   </ion-content>
 </ion-view>

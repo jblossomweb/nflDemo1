@@ -1,7 +1,20 @@
 <ion-view view-title="Teams">
+  <ion-header-bar class="bar-light bar-subheader search-bar">
+    <input type="text" placeholder="Search" 
+      ng-model="search"
+      ng-focus="searchFocused = true"
+      ng-blur="searchFocused = false"
+      ng-change="scrollTop()"
+      style="width:100%"
+    >
+    <button ng-if="search.length"
+      class="button button-icon ion-android-close input-button"
+      ng-click="clearSearch()">
+    </button>
+  </ion-header-bar>
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="team in teams | orderBy:'name'" href="#/app/teams/{{team.id}}">
+      <ion-item ng-repeat="team in getTeams() | orderBy:'name'" href="#/app/teams/{{team.id}}">
         <img src="{{team.logo.url}}" width="32" height="32" style="float:left;margin-right:20px;margin-top:-6px" /> 
         <span style="float:left;" />{{team.name}}</span>
       </ion-item>
