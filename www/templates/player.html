@@ -1,19 +1,22 @@
 <ion-view view-title="{{player.name}}">
-  <ion-content>
-    <h2 class="left page-title">{{player.name}}</h2>
-    <div class="center page-title" style="background-color:{{team.colorCode}}">
-        <img src="{{player.images[1].url}}" width="100%" />
+  <ion-content class="player-view turf">
+    <div class="card">
+        <div class="item item-image">
+          <img src="{{player.actionshot.url}}">
+        </div>
+        <div class="element name" style="border-top:4px solid {{team.colorCode}}">
+          <span ng-bind="player.name"></span>
+          <span class="position" ng-bind="player.position[0].description"></span>
+        </div>
+        <div class="element logo"><img src="{{team.logo.url}}" /></div>
+        <div class="element position">{{player.position.description}}</div>
+        <div class="element number">{{player.jerseyNumber}}</div>
+        <div class="element thumb"><img src="{{player.headshot.url}}"></div>
     </div>
-    <!-- <ion-list>
-      <ion-item href="#/app/teams/{{team.id}}/roster">
-        <span class="center">Roster</span>
+    <ion-list>
+      <ion-item href="#/app/players/{{player.id}}/stats">
+        <span class="center">Statistics</span>
       </ion-item>
-      <ion-item href="#/app/teams/{{team.id}}/depth">
-        <span class="center">Depth Chart</span>
-      </ion-item>
-      <ion-item href="#/app/teams/{{team.id}}/injuries">
-        <span class="center">Injuries</span>
-      </ion-item>
-    </ion-list> -->
+    </ion-list>
   </ion-content>
 </ion-view>

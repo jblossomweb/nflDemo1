@@ -228,6 +228,51 @@ h1.page-title{
   color: #bbb;
 }
 
+
+.player-view .card{
+    position:relative;
+}
+
+.player-view .card .item-image {
+    margin-bottom:60px;
+}
+
+.player-view .card .element {
+    position:absolute;
+    z-index:2;
+    color:#fff;
+}
+
+.player-view .card .element.name {
+    bottom:0px;
+    left:0px;
+    font-size:18px;
+    font-weight:bold;
+    background:#000;
+    width:100%;
+
+}
+
+.player-view .card .element.name span{
+    margin-left:8px;
+    line-height:64px;
+}
+
+.player-view .card .element.name span.position {
+    font-size:12px;
+}
+
+.player-view .card .element.logo {
+    bottom:0px;
+    right:8px;
+}
+
+.player-view .card .element.logo img {
+    width:80px;
+    height:80px;
+}
+
+
 @media only screen and (max-width: 480px){
 	.turf .field .position {
 		left:44%;
@@ -362,6 +407,8 @@ h1.page-title{
 	margin-left:75px;
   }
 }
+
+
 
 
 

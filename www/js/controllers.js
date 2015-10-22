@@ -122,6 +122,16 @@ angular.module('nflTeams.controllers', [])
   teamFactory.get(player.team.id).then(function(team){
     $scope.team = team;
   }); // promise
+  if(player.images && player.images.length){
+    angular.forEach(player.images, function(image){
+      if(image.type == 'headshot' && image.format == 'png'){
+        $scope.player.headshot = image;
+      }
+      if(image.type == 'action'){
+        $scope.player.actionshot = image;
+      }
+    });
+  }
 }])
 
 .controller('DepthCtrl', ['$scope', 'team', function($scope, team) {
